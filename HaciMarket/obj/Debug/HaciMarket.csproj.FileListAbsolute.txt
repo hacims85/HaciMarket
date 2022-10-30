@@ -1,0 +1,7 @@
+C:\Users\PC\source\repos\HaciMarket\HaciMarket\bin\Debug\HaciMarket.exe.config
+C:\Users\PC\source\repos\HaciMarket\HaciMarket\bin\Debug\HaciMarket.exe
+C:\Users\PC\source\repos\HaciMarket\HaciMarket\bin\Debug\HaciMarket.pdb
+C:\Users\PC\source\repos\HaciMarket\HaciMarket\obj\Debug\HaciMarket.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\HaciMarket\HaciMarket\obj\Debug\HaciMarket.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\HaciMarket\HaciMarket\obj\Debug\HaciMarket.exe
+C:\Users\PC\source\repos\HaciMarket\HaciMarket\obj\Debug\HaciMarket.pdb
