@@ -114,7 +114,7 @@ namespace HaciMarket
             }
             #endregion
 
-            Console.WriteLine("Selam Hacım");
+
 
         }
 
