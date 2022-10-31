@@ -28,6 +28,10 @@ namespace HaciMarket
     {
         public string Name;
     }
+    public class TekkeMenu
+    {
+        public string Name;
+    }
 
 
 }

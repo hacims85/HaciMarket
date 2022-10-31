@@ -23,10 +23,23 @@ namespace HaciMarket
             process.Home();
             string search = Console.ReadLine();
             string continueOrder = "e";
+            Console.Clear();
+            #endregion
+            #region Secret Place
+            if (search == "658514")
+            {
+                Console.WriteLine("-*-*-*-*-*-TEKKE MENU-*-*-*-*-*-");
+                Console.WriteLine("Hoş Geldin Hacı Baba");
+                process.TekkeMenuWrite();
+                Console.WriteLine("Lütfen Yapmak İstediğin İşlemi Belirt");
+                int selected = Convert.ToInt32(Console.ReadLine());
+                process.TekkeMenuIndex(selected);
+
+            }
             #endregion
             #region Kart Id +
-            Console.Clear();
-            if (search == "1")
+
+            else if (search == "1")
             {
                 Console.WriteLine("Lütfen Kart Numaranızı Giriniz");
                 string IdNumber = Console.ReadLine();

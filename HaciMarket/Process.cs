@@ -12,6 +12,7 @@ namespace HaciMarket
         public Product[] Products;
         public Episode[] Episodes;
         public Costumer[] Costumers;
+        public TekkeMenu[] TekkeMenus;
 
 
         public Process()
@@ -19,48 +20,59 @@ namespace HaciMarket
             Products = new Product[0];
             Episodes = new Episode[0];
             Costumers = new Costumer[0];
+            TekkeMenus = new TekkeMenu[0];
 
 
             #region Product Added
 
 
 
-            ProductAdd(new Product() { Name = "Elma", unit = "KG", price = 12.99, stock = 100, episode = "Manav" });
-            ProductAdd(new Product() { Name = "Armut", unit = "KG", price = 15.25, stock = 150, episode = "Manav" });
-            ProductAdd(new Product() { Name = "Marul", unit = "Adet", price = 5.50, stock = 85, episode = "Manav" });
-            ProductAdd(new Product() { Name = "Kola", unit = "LT", price = 21.50, stock = 135, episode = "İçecekler" });
-            ProductAdd(new Product() { Name = "Fanta", unit = "LT", price = 20.50, stock = 126, episode = "İçecekler" });
-            ProductAdd(new Product() { Name = "Sprite", unit = "LT", price = 21.00, stock = 92, episode = "İçecekler" });
-            ProductAdd(new Product() { Name = "Ekmek", unit = "Adet", price = 4, stock = 110, episode = "Unlu Mamuller" });
-            ProductAdd(new Product() { Name = "Lavaş", unit = "Paket", price = 15.99, stock = 57, episode = "Unlu Mamuller" });
-            ProductAdd(new Product() { Name = "Simit", unit = "Adet", price = 5, stock = 75, episode = "Unlu Mamuller" });
-            ProductAdd(new Product() { Name = "Vernel", unit = "KG", price = 36.99, stock = 60, episode = "Temizlik Ürünleri" });
-            ProductAdd(new Product() { Name = "Tualet Kağıdı", unit = "Adet", price = 85.00, stock = 50, episode = "Temizlik Ürünleri" });
-            ProductAdd(new Product() { Name = "Islak Mendil", unit = "Adet", price = 15.50, stock = 125, episode = "Temizlik Ürünleri" });
-            ProductAdd(new Product() { Name = "Fasulye", unit = "KG", price = 17.00, stock = 100, episode = "Bakliyat" });
-            ProductAdd(new Product() { Name = "Nohut", unit = "KG", price = 12.50, stock = 78, episode = "Bakliyat" });
-            ProductAdd(new Product() { Name = "Mercimek", unit = "KG", price = 9.99, stock = 65, episode = "Bakliyat" });
+            Add(new Product() { Name = "Elma", unit = "KG", price = 12.99, stock = 100, episode = "Manav" });
+            Add(new Product() { Name = "Armut", unit = "KG", price = 15.25, stock = 150, episode = "Manav" });
+            Add(new Product() { Name = "Marul", unit = "Adet", price = 5.50, stock = 85, episode = "Manav" });
+            Add(new Product() { Name = "Kola", unit = "LT", price = 21.50, stock = 135, episode = "İçecekler" });
+            Add(new Product() { Name = "Fanta", unit = "LT", price = 20.50, stock = 126, episode = "İçecekler" });
+            Add(new Product() { Name = "Sprite", unit = "LT", price = 21.00, stock = 92, episode = "İçecekler" });
+            Add(new Product() { Name = "Ekmek", unit = "Adet", price = 4, stock = 110, episode = "Unlu Mamuller" });
+            Add(new Product() { Name = "Lavaş", unit = "Paket", price = 15.99, stock = 57, episode = "Unlu Mamuller" });
+            Add(new Product() { Name = "Simit", unit = "Adet", price = 5, stock = 75, episode = "Unlu Mamuller" });
+            Add(new Product() { Name = "Vernel", unit = "KG", price = 36.99, stock = 60, episode = "Temizlik Ürünleri" });
+            Add(new Product() { Name = "Tualet Kağıdı", unit = "Adet", price = 85.00, stock = 50, episode = "Temizlik Ürünleri" });
+            Add(new Product() { Name = "Islak Mendil", unit = "Adet", price = 15.50, stock = 125, episode = "Temizlik Ürünleri" });
+            Add(new Product() { Name = "Fasulye", unit = "KG", price = 17.00, stock = 100, episode = "Bakliyat" });
+            Add(new Product() { Name = "Nohut", unit = "KG", price = 12.50, stock = 78, episode = "Bakliyat" });
+            Add(new Product() { Name = "Mercimek", unit = "KG", price = 9.99, stock = 65, episode = "Bakliyat" });
 
             #endregion
             #region Episode Added
 
 
-            EpisodeAdd(new Episode() { Name = "Manav" });
-            EpisodeAdd(new Episode() { Name = "İçecekler" });
-            EpisodeAdd(new Episode() { Name = "Unlu Mamuller" });
-            EpisodeAdd(new Episode() { Name = "Temizlik Ürünleri" });
-            EpisodeAdd(new Episode() { Name = "Bakliyat" });
+            Add(new Episode() { Name = "Manav" });
+            Add(new Episode() { Name = "İçecekler" });
+            Add(new Episode() { Name = "Unlu Mamuller" });
+            Add(new Episode() { Name = "Temizlik Ürünleri" });
+            Add(new Episode() { Name = "Bakliyat" });
 
 
             #endregion
             #region Costumer Added
 
-            CostumerAdd(new Costumer() { Name = "Oktay", Surname = "Çalışkan", PhoneNumber = "5425450437", IdNumber = "123456", Gender = "Bey" });
-            CostumerAdd(new Costumer() { Name = "Hacı", Surname = "Sarıkatipoğlu", PhoneNumber = "5066144813", IdNumber = "654321", Gender = "Bey" });
-            CostumerAdd(new Costumer() { Name = "Fatma", Surname = "Çelik", PhoneNumber = "5558886664", IdNumber = "963258", Gender = "Hanım" });
-            CostumerAdd(new Costumer() { Name = "Alp", Surname = "Sarıkışla", PhoneNumber = "5325325252", IdNumber = "741258", Gender = "Bey" });
-            CostumerAdd(new Costumer() { Name = "Ahmet", Surname = "Seri", PhoneNumber = "5426356354", IdNumber = "852147", Gender = "Bey" });
-            CostumerAdd(new Costumer() { Name = "Yeşim", Surname = "Özgür", PhoneNumber = "5554562525", IdNumber = "147896", Gender = "Hanım" });
+            Add(new Costumer() { Name = "Oktay", Surname = "Çalışkan", PhoneNumber = "5425450437", IdNumber = "123456", Gender = "Bey" });
+            Add(new Costumer() { Name = "Hacı", Surname = "Sarıkatipoğlu", PhoneNumber = "5066144813", IdNumber = "654321", Gender = "Bey" });
+            Add(new Costumer() { Name = "Fatma", Surname = "Çelik", PhoneNumber = "5558886664", IdNumber = "963258", Gender = "Hanım" });
+            Add(new Costumer() { Name = "Alp", Surname = "Sarıkışla", PhoneNumber = "5325325252", IdNumber = "741258", Gender = "Bey" });
+            Add(new Costumer() { Name = "Ahmet", Surname = "Seri", PhoneNumber = "5426356354", IdNumber = "852147", Gender = "Bey" });
+            Add(new Costumer() { Name = "Yeşim", Surname = "Özgür", PhoneNumber = "5554562525", IdNumber = "147896", Gender = "Hanım" });
+            #endregion
+            #region TekkeMenu Added
+            Add(new TekkeMenu() { Name = "Fiyat Güncelle" });
+            Add(new TekkeMenu() { Name = "Stok Güncelle" });
+            Add(new TekkeMenu() { Name = "Müşteri Güncelle" });
+            Add(new TekkeMenu() { Name = "Yeni Müşteri Ekle" });
+
+
+
+
             #endregion
         }
         public Episode[] GetAllEpisodes()
@@ -77,7 +89,7 @@ namespace HaciMarket
         }
 
 
-        public void ProductAdd(Product e)
+        public void Add(Product e)
         {
             Product[] temporary = new Product[Products.Length + 1];
             Array.Copy(Products, temporary, Products.Length);
@@ -97,7 +109,7 @@ namespace HaciMarket
 
         }
 
-        public void EpisodeAdd(Episode n)
+        public void Add(Episode n)
         {
 
             Episode[] temporary = new Episode[Episodes.Length + 1];
@@ -122,7 +134,7 @@ namespace HaciMarket
         }
 
 
-        public void CostumerAdd(Costumer c)
+        public void Add(Costumer c)
         {
 
             Costumer[] temporary = new Costumer[Costumers.Length + 1];
@@ -132,7 +144,36 @@ namespace HaciMarket
 
 
         }
+        public void Add(TekkeMenu t)
+        {
 
+            TekkeMenu[] temporary = new TekkeMenu[TekkeMenus.Length + 1];
+            Array.Copy(TekkeMenus, temporary, TekkeMenus.Length);
+            temporary[temporary.Length - 1] = t;
+            TekkeMenus = temporary;
+
+
+        }
+        public void AllProducts()
+        {
+            for (int k = 0; k < Products.Length; k++)
+            {
+                {
+                    Console.WriteLine($"{k + 1}) {Products[k].Name} {Products[k].price} {Products[k].stock} {Products[k].unit}");
+
+                }
+            }
+        }
+        public void AllCostumers()
+        {
+            for (int k = 0; k < Costumers.Length; k++)
+            {
+                {
+                    Console.WriteLine($"{k + 1}) {Costumers[k].Name} {Costumers[k].Surname} {Costumers[k].IdNumber}");
+
+                }
+            }
+        }
         double totalPrice = 0;
         string totalOrder = "";
         public void OrderMenu(int selected)
@@ -195,6 +236,70 @@ namespace HaciMarket
         public string GetTotalOrder()
         {
             return totalOrder;
+        }
+        public void TekkeMenuWrite()
+        {
+            for (int i = 0; i < TekkeMenus.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}) {TekkeMenus[i].Name}");
+            }
+        }
+        public void TekkeMenuIndex(int selected)
+        {
+            while (selected != 1 && selected != 2 && selected != 3 && selected != 4)
+            {
+
+                Console.WriteLine("Lütfen Doğru İşlem Numarası Gir");
+                selected = Convert.ToInt32(Console.ReadLine());
+
+            }
+            Console.Clear();
+            if (selected == 1)
+            {
+
+
+                for (int i = 0; i < TekkeMenus.Length; i++)
+                {
+                    if (selected == i + 1)
+                    {
+                        Console.WriteLine($"-*-*-*-{TekkeMenus[i].Name}-*-*-*-");
+
+                        Console.WriteLine($"Lütfen {TekkeMenus[i].Name} İşlemi Yapmak İstediğiniz Ürün Numarasını Giriniz");
+                        AllProducts();
+                    }
+                }
+            }
+            else if (selected == 2)
+            {
+                for (int i = 0; i < TekkeMenus.Length; i++)
+                {
+                    if (selected == i + 1)
+                    {
+                        Console.WriteLine($"-*-*-*-{TekkeMenus[i].Name}-*-*-*-");
+
+                        Console.WriteLine($"Lütfen {TekkeMenus[i].Name} İşlemi Yapmak İstediğiniz Ürün Numarasını Giriniz");
+                        AllProducts();
+                    }
+                }
+            }
+            else if (selected == 3)
+            {
+                for (int i = 0; i < TekkeMenus.Length; i++)
+                {
+                    if (selected == i + 1)
+                    {
+                        Console.WriteLine($"-*-*-*-{TekkeMenus[i].Name}-*-*-*-");
+
+                        Console.WriteLine($"Lütfen {TekkeMenus[i].Name} İşlemi Yapmak İstediğiniz Müşteri Numarasını Giriniz");
+                        AllCostumers();
+                    }
+                }
+            }
+            else if (selected == 4)
+            {
+                Console.WriteLine("Lütfen Eklemek İstediğiniz Müşteri Bilgilerini Giriniz");
+            }
+
         }
 
 
