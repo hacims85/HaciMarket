@@ -79,13 +79,17 @@ namespace HaciMarket
         {
             return Episodes;
         }
-        public Costumer[] GetAllCustomers()
+        public Costumer[] GetAllCostumers()
         {
             return Costumers;
         }
         public Product[] GetAllProducts()
         {
             return Products;
+        }
+        public TekkeMenu[] GetAllTekkeMenus()
+        {
+            return TekkeMenus;
         }
 
 
@@ -256,56 +260,225 @@ namespace HaciMarket
             Console.Clear();
             if (selected == 1)
             {
-
-
-                for (int i = 0; i < TekkeMenus.Length; i++)
+                string startAgain = "e";
+                while (startAgain.ToUpper() == "E")
                 {
-                    if (selected == i + 1)
+                    for (int i = 0; i < TekkeMenus.Length; i++)
                     {
-                        Console.WriteLine($"-*-*-*-{TekkeMenus[i].Name}-*-*-*-");
+                        if (selected == i + 1)
+                        {
+                            Console.WriteLine($"-*-*-*-{TekkeMenus[i].Name}-*-*-*-");
 
-                        Console.WriteLine($"Lütfen {TekkeMenus[i].Name} İşlemi Yapmak İstediğiniz Ürün Numarasını Giriniz");
-                        AllProducts();
+
+                            AllProducts();
+                            Console.WriteLine($"Lütfen {TekkeMenus[i].Name} İşlemi Yapmak İstediğiniz Ürün Numarasını Giriniz");
+                            int productChange = Convert.ToInt32(Console.ReadLine());
+                            if (productChange <= Products.Length)
+                            {
+                                Console.Clear();
+                                Console.WriteLine($"-*-*-*-{Products[productChange - 1].Name} {TekkeMenus[i].Name}-*-*-*-");
+                                Console.WriteLine("Şu Anki Fiyatı = " + Products[productChange - 1].price);
+                                Console.WriteLine("Lütfen Güncel Fiyatı Giriniz");
+                                double newPrice = Convert.ToDouble(Console.ReadLine());
+                                Products[productChange - 1].price = newPrice;
+                                Console.WriteLine($"{Products[productChange - 1].Name} Ürününün Fiyat Güncelleme İşlemi Tamamlandı");
+                                Console.WriteLine("Güncel Fiyat = " + Products[productChange - 1].price);
+
+                            }
+                            Console.WriteLine($"{TekkeMenus[i].Name} İşlemine Devam Etmek İster Misiniz?");
+                            startAgain = Console.ReadLine();
+
+                            Console.Clear();
+                        }
+
                     }
+
                 }
+                Console.WriteLine("Güncelleme İşlemi Tamamlandı Güncel Ürün Listesi Aşağıdaki Gibidir");
+                AllProducts();
             }
             else if (selected == 2)
             {
-                for (int i = 0; i < TekkeMenus.Length; i++)
+                string startAgain = "e";
+                while (startAgain.ToUpper() == "E")
                 {
-                    if (selected == i + 1)
+                    for (int i = 0; i < TekkeMenus.Length; i++)
                     {
-                        Console.WriteLine($"-*-*-*-{TekkeMenus[i].Name}-*-*-*-");
+                        if (selected == i + 1)
+                        {
+                            Console.WriteLine($"-*-*-*-{TekkeMenus[i].Name}-*-*-*-");
 
-                        Console.WriteLine($"Lütfen {TekkeMenus[i].Name} İşlemi Yapmak İstediğiniz Ürün Numarasını Giriniz");
-                        AllProducts();
+
+                            AllProducts();
+                            Console.WriteLine($"Lütfen {TekkeMenus[i].Name} İşlemi Yapmak İstediğiniz Ürün Numarasını Giriniz");
+                            int productChange = Convert.ToInt32(Console.ReadLine());
+                            if (productChange <= Products.Length)
+                            {
+                                Console.Clear();
+                                Console.WriteLine($"-*-*-*-{Products[productChange - 1].Name} {TekkeMenus[i].Name}-*-*-*-");
+                                Console.WriteLine("Şu Anki Stok Miktarı = " + Products[productChange - 1].stock);
+                                Console.WriteLine("Lütfen Güncel Stok Miktarını Giriniz");
+                                double newStok = Convert.ToDouble(Console.ReadLine());
+                                Products[productChange - 1].stock = newStok;
+                                Console.WriteLine($"{Products[productChange - 1].Name} Ürününün Stok Güncelleme İşlemi Tamamlandı");
+                                Console.WriteLine("Güncel Stok = " + Products[productChange - 1].stock);
+
+                            }
+                            Console.WriteLine($"{TekkeMenus[i].Name} İşlemine Devam Etmek İster Misiniz?");
+                            startAgain = Console.ReadLine();
+
+                            Console.Clear();
+                        }
+
                     }
+
                 }
+                Console.WriteLine("Güncelleme İşlemi Tamamlandı Güncel Ürün Listesi Aşağıdaki Gibidir");
+                AllProducts();
             }
             else if (selected == 3)
             {
-                for (int i = 0; i < TekkeMenus.Length; i++)
+                string startAgain = "e";
+                while (startAgain.ToUpper() == "E")
                 {
-                    if (selected == i + 1)
+                    for (int i = 0; i < TekkeMenus.Length; i++)
                     {
-                        Console.WriteLine($"-*-*-*-{TekkeMenus[i].Name}-*-*-*-");
+                        if (selected == i + 1)
+                        {
+                            Console.WriteLine($"-*-*-*-{TekkeMenus[i].Name}-*-*-*-");
 
-                        Console.WriteLine($"Lütfen {TekkeMenus[i].Name} İşlemi Yapmak İstediğiniz Müşteri Numarasını Giriniz");
-                        AllCostumers();
+
+                            AllCostumers();
+                            Console.WriteLine($"Lütfen {TekkeMenus[i].Name} İşlemi Yapmak İstediğiniz Müşteri Numarasını Giriniz");
+                            int costumerChange = Convert.ToInt32(Console.ReadLine());
+                            if (costumerChange <= Costumers.Length)
+                            {
+                                Console.Clear();
+                                Console.WriteLine($"-*-*-*- {Costumers[costumerChange - 1].Name} {Costumers[costumerChange - 1].Surname} -*-*-*-");
+                                string continiuChangeCostumer = "e";
+                                while (continiuChangeCostumer.ToUpper() == "E")
+                                {
+                                    Console.WriteLine("Lütfen Değiştirmek istediğiniz Bölümü Seçiniz");
+                                    Console.WriteLine("1) İsim");
+                                    Console.WriteLine("2) Soyisim");
+                                    Console.WriteLine("3) Kart Numarası");
+                                    Console.WriteLine("4) Telefon Numarası");
+                                    Console.WriteLine("5) Cinsiyet");
+                                    int changeIndex = Convert.ToInt32(Console.ReadLine());
+                                    while (changeIndex != 1 && changeIndex != 2 && changeIndex != 3 && changeIndex != 4 && changeIndex != 5)
+                                    {
+                                        Console.WriteLine("Lütfen Doğru Bölüm Numarası Giriniz");
+                                        changeIndex = Convert.ToInt32(Console.ReadLine());
+                                    }
+                                    if (changeIndex == 1)
+                                    {
+                                        Console.WriteLine("Lütfen Yeni İsim Giriniz");
+                                        string newName = Console.ReadLine();
+                                        Costumers[costumerChange - 1].Name = newName;
+                                    }
+                                    else if (changeIndex == 2)
+                                    {
+                                        Console.WriteLine("Lütfen Yeni Soyisim Giriniz");
+                                        string newSurname = Console.ReadLine();
+                                        Costumers[costumerChange - 1].Surname = newSurname;
+                                    }
+                                    else if (changeIndex == 3)
+                                    {
+                                        Console.WriteLine("Lütfen Yeni Kart Numarası Giriniz");
+                                        string newkartID = Console.ReadLine();
+                                        Costumers[costumerChange - 1].IdNumber = newkartID;
+                                    }
+                                    else if (changeIndex == 4)
+                                    {
+                                        Console.WriteLine("Lütfen Yeni Telefon Numarası Giriniz");
+                                        string newphoneNumber = Console.ReadLine();
+                                        Costumers[costumerChange - 1].PhoneNumber = newphoneNumber;
+                                    }
+                                    else if (changeIndex == 5)
+                                    {
+                                        Console.WriteLine("Lütfen Yeni Cinsiyet Giriniz");
+                                        string newGender = Console.ReadLine();
+                                        Costumers[costumerChange - 1].Gender = newGender;
+                                    }
+                                    Console.Clear();
+                                    Console.WriteLine("Değişim İşlemi Tamamlandı Değişen Müşteri Bilgisi Aşağıdaki Gibidir");
+                                    Console.WriteLine($"{Costumers[costumerChange - 1].Name} {Costumers[costumerChange - 1].Surname} {Costumers[costumerChange - 1].IdNumber} {Costumers[costumerChange - 1].PhoneNumber} {Costumers[costumerChange - 1].Gender}");
+                                    Console.WriteLine("Bu Müşteride Başka Değişiklik Yapmak İster Misiniz? E/H");
+                                    continiuChangeCostumer = Console.ReadLine();
+
+
+
+                                }
+
+
+                                Console.WriteLine("Değişim İşlemine Devam Etmek İster Misiniz? E/H");
+                                startAgain = Console.ReadLine();
+                                Console.Clear();
+
+                            }
+                            else
+                            {
+                                Console.WriteLine("Lütfen Doğru Müşteri Numarasını Giriniz");
+                                costumerChange = Convert.ToInt32(Console.ReadLine());
+                            }
+
+
+
+
+                        }
                     }
+
                 }
+                Console.Clear();
+                Console.WriteLine("Değişim İşlemi Bitmiştir Güncel Müşteri Listesi Aşağıdaki Gibidir");
+                AllCostumers();
+
             }
             else if (selected == 4)
             {
-                Console.WriteLine("Lütfen Eklemek İstediğiniz Müşteri Bilgilerini Giriniz");
+                string startAgain = "e";
+                if (startAgain.ToUpper() == "E")
+                {
+                    Console.WriteLine("Lütfen Eklemek İstediğiniz Müşteri Bilgilerini Giriniz");
+                    Console.WriteLine("Lütfen İsim Giriniz");
+                    string aName = Console.ReadLine();
+                    Console.WriteLine("Lütfen Soysim Giriniz");
+                    string aSurname = Console.ReadLine();
+                    Console.WriteLine("Lütfen Telefon Numarası Giriniz");
+                    string aPhoneNumber = Console.ReadLine();
+                    Console.WriteLine("Lütfen Kart Numarası Giriniz");
+                    string aIdNumber = Console.ReadLine();
+                    Console.WriteLine("Lütfen Cinsiyet Giriniz");
+                    string aGender = Console.ReadLine();
+
+                    Add(new Costumer
+                    {
+                        Name = aName,
+                        Surname = aSurname,
+                        PhoneNumber = aPhoneNumber,
+                        IdNumber = aIdNumber,
+                        Gender = aGender
+                    });
+
+                    Console.Clear();
+                    Console.WriteLine("Ekleme İşlemi Tamamlandı");
+                    Console.WriteLine("Başka Müşteri Eklemek İster Misiniz?E/H");
+                    startAgain = Console.ReadLine();
+                }
+
+                Console.Clear();
+                Console.WriteLine("Ekleme İşlemi Bitmiştir Güncel Müşteri Listesi Aşağıdaki Gibidir");
+                AllCostumers();
+
+
             }
-
         }
-
-
-
-
-
-
     }
+
+
+
+
+
+
 }
+

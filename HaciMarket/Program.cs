@@ -16,7 +16,8 @@ namespace HaciMarket
             #region Get Results
             process.Products = process.GetAllProducts();
             process.Episodes = process.GetAllEpisodes();
-            process.Costumers = process.GetAllCustomers();
+            process.Costumers = process.GetAllCostumers();
+            process.TekkeMenus = process.GetAllTekkeMenus();
             #endregion
 
             #region Home Page
